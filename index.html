@@ -1,0 +1,144 @@
+horoscope/
+ ├── index.html
+ ├── styles.css
+ └── images/
+     ├── bg.jpg          ← твоя картинка (та, що ти кидав)
+     ├── aries.png
+     ├── taurus.png
+     ├── gemini.png
+     ├── cancer.png
+     ├── leo.png
+     ├── virgo.png
+     ├── libra.png
+     ├── scorpio.png
+     ├── sagittarius.png
+     ├── capricorn.png
+     ├── aquarius.png
+     └── pisces.png
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Гороскоп на сьогодні</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="overlay">
+
+  <header>
+    <h1>🔮 Гороскоп на сьогодні</h1>
+    <p>Оберіть свій знак зодіаку</p>
+  </header>
+
+  <main>
+    <div class="select-box">
+      <select id="zodiac">
+        <option value="">— Оберіть знак —</option>
+        <option value="aries">Овен (21 березня)</option>
+        <option value="taurus">Телець</option>
+        <option value="gemini">Близнюки</option>
+        <option value="cancer">Рак</option>
+        <option value="leo">Лев</option>
+        <option value="virgo">Діва</option>
+        <option value="libra">Терези</option>
+        <option value="scorpio">Скорпіон</option>
+        <option value="sagittarius">Стрілець</option>
+        <option value="capricorn">Козоріг</option>
+        <option value="aquarius">Водолій</option>
+        <option value="pisces">Риби</option>
+      </select>
+    </div>
+
+    <!-- ЗНАКИ -->
+    <div id="aries" class="card">
+      <img src="images/aries.png" alt="Овен">
+      <h2>Овен</h2>
+      <p>Сміливо беріться за нові справи — день сприятливий.</p>
+    </div>
+
+    <div id="taurus" class="card">
+      <img src="images/taurus.png" alt="Телець">
+      <h2>Телець</h2>
+      <p>Час подумати про фінанси та стабільність.</p>
+    </div>
+
+    <div id="gemini" class="card">
+      <img src="images/gemini.png" alt="Близнюки">
+      <h2>Близнюки</h2>
+      <p>Спілкування відкриє нові можливості.</p>
+    </div>
+
+    <div id="cancer" class="card">
+      <img src="images/cancer.png" alt="Рак">
+      <h2>Рак</h2>
+      <p>Довіряйте інтуїції та емоціям.</p>
+    </div>
+
+    <div id="leo" class="card">
+      <img src="images/leo.png" alt="Лев">
+      <h2>Лев</h2>
+      <p>Покажіть свої лідерські якості.</p>
+    </div>
+
+    <div id="virgo" class="card">
+      <img src="images/virgo.png" alt="Діва">
+      <h2>Діва</h2>
+      <p>Ідеальний день для порядку.</p>
+    </div>
+
+    <div id="libra" class="card">
+      <img src="images/libra.png" alt="Терези">
+      <h2>Терези</h2>
+      <p>Знайдіть баланс у всьому.</p>
+    </div>
+
+    <div id="scorpio" class="card">
+      <img src="images/scorpio.png" alt="Скорпіон">
+      <h2>Скорпіон</h2>
+      <p>Сильний день для рішучих дій.</p>
+    </div>
+
+    <div id="sagittarius" class="card">
+      <img src="images/sagittarius.png" alt="Стрілець">
+      <h2>Стрілець</h2>
+      <p>Подорожі та навчання принесуть користь.</p>
+    </div>
+
+    <div id="capricorn" class="card">
+      <img src="images/capricorn.png" alt="Козоріг">
+      <h2>Козоріг</h2>
+      <p>Наполегливість дасть результат.</p>
+    </div>
+
+    <div id="aquarius" class="card">
+      <img src="images/aquarius.png" alt="Водолій">
+      <h2>Водолій</h2>
+      <p>Час нестандартних ідей.</p>
+    </div>
+
+    <div id="pisces" class="card">
+      <img src="images/pisces.png" alt="Риби">
+      <h2>Риби</h2>
+      <p>Творчість і спокій — ваш ключ.</p>
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+  const select = document.getElementById("zodiac");
+  const cards = document.querySelectorAll(".card");
+
+  select.addEventListener("change", () => {
+    cards.forEach(card => card.style.display = "none");
+    if (select.value) {
+      document.getElementById(select.value).style.display = "block";
+    }
+  });
+</script>
+
+</body>
+</html>
